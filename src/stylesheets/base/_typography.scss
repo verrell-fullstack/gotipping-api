@@ -1,0 +1,71 @@
+body {
+  color: $text-color;
+  font: 200 20px $font-gotham;
+}
+
+// Headings
+
+.t {
+  font-family: $font-gotham;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.t-h1 {
+  @extend .t;
+}
+
+.t-h2 {
+  @extend .t;
+}
+
+.t-h3 {
+  @extend .t;
+}
+
+.t-h4 {
+  @extend .t;
+}
+
+.t-paragraph {
+  margin-bottom: 0;
+  
+  font-size: 15px;
+  letter-spacing: .7px;
+}
+
+.t-uppercase {
+  text-transform: uppercase;
+}
+
+.c-white {
+  color: $white;
+}
+
+.c-black {
+  color: $black;
+}
+
+.c-blue {
+  color: $blue;
+}
+
+.c-royal-blue {
+  color: $royal-blue;
+}
+
+.c-savoy-blue {
+  color: $savoy-blue;
+}
+
+.c-periwinkle {
+  color: $periwinkle;
+}
+
+.bg-royal-blue {
+  background-color: $royal-blue;
+}
+
+.bg-savoy-blue {
+  background-color: $savoy-blue;
+}
