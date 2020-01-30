@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/gotipping-node/precache-manifest.6088501f4c9a668ed1d20305824261fe.js"
+  "/gotipping-node/precache-manifest.3ef3475e213119c38a52fbc38617fdd6.js"
 );
 
 workbox.clientsClaim();

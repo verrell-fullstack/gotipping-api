@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/gotipping-node/static/media/featured-competitions.19c32193.jpg"
   },
   {
-    "revision": "6616e9062523d00a4815",
+    "revision": "56f7d0e6d627fda3e427",
     "url": "/gotipping-node/static/css/main.e6945ebf.chunk.css"
   },
   {
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/gotipping-node/static/media/gotham-bold.f95835df.woff"
   },
   {
-    "revision": "190faaa2f9bcb3c7cf5d174fb7846ecc",
-    "url": "/gotipping-node/static/media/fa-regular-400.190faaa2.eot"
-  },
-  {
     "revision": "dddf7b2cfdcc9f9da4354794809221c5",
     "url": "/gotipping-node/static/media/fa-regular-400.dddf7b2c.ttf"
+  },
+  {
+    "revision": "190faaa2f9bcb3c7cf5d174fb7846ecc",
+    "url": "/gotipping-node/static/media/fa-regular-400.190faaa2.eot"
   },
   {
     "revision": "9f3c8f805668d4182d2173b660a7a21e",
@@ -56,24 +56,28 @@ self.__precacheManifest = [
     "url": "/gotipping-node/static/media/gotham-book.32e50d54.ttf"
   },
   {
-    "revision": "7005cddedc2503513357ec2fcd17f64f",
-    "url": "/gotipping-node/static/media/gotham-medium.7005cdde.ttf"
-  },
-  {
     "revision": "72b8dccdbcfb97ffb872475e8e9dbb52",
     "url": "/gotipping-node/static/media/gotham-medium.72b8dccd.eot"
+  },
+  {
+    "revision": "7005cddedc2503513357ec2fcd17f64f",
+    "url": "/gotipping-node/static/media/gotham-medium.7005cdde.ttf"
   },
   {
     "revision": "a12319d53dd7b7ae0e4e06fcc2b01e15",
     "url": "/gotipping-node/static/media/gotham-bold.a12319d5.eot"
   },
   {
-    "revision": "4019e2ef5746b8baa1ca57ff6afd6bed",
-    "url": "/gotipping-node/static/media/fa-brands-400.4019e2ef.woff2"
+    "revision": "4b060153863a545baac42ecc86de3a06",
+    "url": "/gotipping-node/static/media/gotham-bold.4b060153.ttf"
   },
   {
     "revision": "7960713e96c6058336d3928be08067a4",
     "url": "/gotipping-node/static/media/fa-solid-900.7960713e.woff"
+  },
+  {
+    "revision": "4019e2ef5746b8baa1ca57ff6afd6bed",
+    "url": "/gotipping-node/static/media/fa-brands-400.4019e2ef.woff2"
   },
   {
     "revision": "0d2158700ccb68e527a6915a6f9256e3",
@@ -84,16 +88,12 @@ self.__precacheManifest = [
     "url": "/gotipping-node/static/media/fa-brands-400.b680adba.eot"
   },
   {
-    "revision": "913334b20fe18a3568d18d9178d2b9b8",
-    "url": "/gotipping-node/static/media/fa-brands-400.913334b2.ttf"
-  },
-  {
     "revision": "c794369e05c1bfbc3954539d6c12fb89",
     "url": "/gotipping-node/static/media/fa-regular-400.c794369e.svg"
   },
   {
-    "revision": "4b060153863a545baac42ecc86de3a06",
-    "url": "/gotipping-node/static/media/gotham-bold.4b060153.ttf"
+    "revision": "913334b20fe18a3568d18d9178d2b9b8",
+    "url": "/gotipping-node/static/media/fa-brands-400.913334b2.ttf"
   },
   {
     "revision": "4cb8ea72ad6d4f33465239dbc106e015",
@@ -124,8 +124,8 @@ self.__precacheManifest = [
     "url": "/gotipping-node/static/media/fa-brands-400.071852ed.svg"
   },
   {
-    "revision": "6616e9062523d00a4815",
-    "url": "/gotipping-node/static/js/main.f378112e.chunk.js"
+    "revision": "56f7d0e6d627fda3e427",
+    "url": "/gotipping-node/static/js/main.54c59c65.chunk.js"
   },
   {
     "revision": "bd9ce213c7fd46db81d94c6709419ab2",
@@ -244,7 +244,7 @@ self.__precacheManifest = [
     "url": "/gotipping-node/static/media/recommend-9.16728062.jpg"
   },
   {
-    "revision": "97138860c3ebdf3693e5466c17be13af",
+    "revision": "23105291398399609223a21e7672848f",
     "url": "/gotipping-node/index.html"
   }
 ];
