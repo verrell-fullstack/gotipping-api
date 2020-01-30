@@ -1,20 +1,27 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import classnames from 'classnames'
 
 import '../stylesheets/main.scss'
 
-function Home() {
+import SubHeaderPills from '../components/SubHeaderPills'
+
+const subheaderTabs = {
+  carouselShow: false,
+}
+
+function Home({btnToggle, content, userLogged}) {
   return(
-    <div className="home">
-      <div className="container">
-        <div className="home-wrapper">
-          <h1>This is the Homepage</h1>
-          <Link to="/globals" className="btn-inverted-blue c-blue">See all the Globals</Link>
-          <br/>
-          <Link to="/about" className="btn-inverted-blue c-blue">Link to about</Link>
-        </div>
-      </div>
-    </div>
+    <>
+      <main className={classnames("dashboard user-logged-content", {
+        "content-collapsed": !btnToggle,
+        "user-logged": userLogged
+      })}>
+        <SubHeaderPills 
+          subheader={content[0]}
+          subheaderTabs={subheaderTabs}
+        />
+      </main>
+    </>
   )
 }
 

@@ -1,0 +1,172 @@
+
+.section-featured {
+  .content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 26px 31px 37px;
+  }
+
+  .video-holder {
+    width: 44.5%;
+    height: 355px;
+  }
+
+  .content-holder {
+    margin-left: 39px;
+    width: 34%;
+  }
+
+  .title {
+    font-size: 24.4px;
+    font-weight: 600;
+  }
+
+  .desc {
+    margin: 17px 0;
+
+    font-size: 16.3px;
+    line-height: 26px;
+  }
+
+  .btn-image:first-of-type {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .section-featured {
+    .video-holder {
+      height: 300px;
+    }
+
+    .content-holder {
+      width: 49%;
+    }
+  }
+}
+
+@include respond-to(lg) {
+  .content-collapsed .section-featured {
+    .video-holder {
+      width: 44.5%;
+      height: 265px;
+    }
+
+    .content-holder {
+      margin-left: 25px;
+      width: 52%;
+    }
+  }
+
+  .section-featured {
+    .content-wrapper {
+      padding: 26px 15px 37px;
+    }
+
+    .video-holder,
+    .content-holder {
+      width: 48%;
+    }
+
+    .video-holder {
+      height: 285px;
+    }
+
+    .content-holder {
+      margin: 14px 0 14px 20px;
+    }
+
+    .title {
+      font-size: 19px;
+    }
+
+    .desc {
+      margin: 10px 0;
+
+      font-size: 15px;
+      line-height: 23px;
+    }
+  }
+}
+
+@include respond-to(md) {
+  .content-collapsed .section-featured {
+    .video-holder,
+    .content-holder {
+      width: 48%;
+    }
+
+    .video-holder {
+      height: 280px;
+    }
+
+    .content-holder {
+      margin: 0 0 0 20px;
+    }
+
+    .title {
+      font-size: 20px;
+    }
+
+    .desc {
+      margin: 10px 0 15px;
+
+      font-size: 15.3px;
+    }
+  }
+
+  .section-featured {
+    .video-holder {
+      height: 280px;
+    }
+  }
+}
+
+@include respond-to(md-down) {
+  .section-featured {
+    .content-wrapper {
+      padding: 26px 15px 37px;
+    }
+
+    .video-holder,
+    .content-holder {
+      width: 100%;
+    }
+
+    .content-holder {
+      margin: 20px 0 0;
+    }
+  }
+}
+
+@include respond-to(sm-down) {
+  .section-featured {
+    .title {
+      font-size: 18px;
+    }
+
+    .desc {
+      margin: 0 0 13px;
+
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    .btn-play {
+      width: 60px;
+      height: 60px;
+
+      &:before {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}
+
+@include respond-to(xs) {
+  .section-featured .video-holder {
+    height: 220px;
+  }
+}

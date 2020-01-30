@@ -1,0 +1,40 @@
+.icon svg {
+  width: 23px;
+
+  path,
+  circle {
+    transition: all .3s ease-in;
+  }
+
+  path {
+    fill: $hemp;
+  }
+}
+
+.icon-basketball svg {
+  circle {
+    fill: $hemp;
+  }
+  
+  path {
+    fill: $bermuda-grey;
+  }
+}
+
+.icon-esports svg {
+  circle {
+    fill: $hemp;
+  }
+}
+
+@include respond-to(lg) {
+  .icon svg {
+    width: 20px;
+  }
+}
+
+@include respond-to(sm-down) {
+  .icon svg {
+    width: 16px;
+  }
+}

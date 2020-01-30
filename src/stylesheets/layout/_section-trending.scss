@@ -1,0 +1,245 @@
+.section-trending {
+  
+
+  // .content-wrapper {
+  //   display: flex;
+  //   padding: 33px 10px 43px 0;
+  // }
+
+  // .card-wrapper {
+  //   padding: 0 30px;
+  // }
+
+  
+}
+
+// @media screen and (min-width: 1200px) and (max-width: 1440px) {
+//   .content-collapsed {
+//     .section-trending .ads-wrapper {
+//       width: 100%;
+//     }
+//   }
+
+//   .section-trending {
+//     .content-wrapper {
+//       flex-wrap: wrap;
+//     }
+
+//     .ads-wrapper {
+//       margin: 31px 31px 0;
+
+//       width: 100%;
+//       height: 155px;
+//     }
+//   }
+// }
+
+// @include respond-to(lg) {
+//   .content-collapsed {
+//     .section-trending {
+//       .card-link {
+//         flex-wrap: initial;
+//       }
+
+//       .text-holder {
+//         margin: 0 0 0 20px;
+//       }
+//     }
+//   }
+
+//   .section-trending {
+//     .t-section-title {
+//       padding: 17px 0 8px 15px;
+//     }
+
+//     .card-wrapper {
+//       padding: 0 15px;
+//     }
+
+//     .card-list {
+//       padding: 25px 0;
+//     }
+
+//     .media-holder {
+//       height: 210px;
+//     }
+
+//     .text-holder {
+//       margin-left: 20px;
+//     }
+
+//     .desc {
+//       line-height: 23px;
+//     }
+//   }
+// }
+
+// @include respond-to(lg-down) {
+//   .content-collapsed {
+//     .section-trending .ads-wrapper {
+//       width: 100%;
+//     }
+//   }
+
+//   .section-trending {
+//     .content-wrapper {
+//       flex-wrap: wrap;
+//     }
+
+//     .ads-wrapper {
+//       margin: 31px 15px 0;
+
+//       width: 100%;
+//       height: 125px;
+//     }
+//   }
+// }
+
+// @include respond-to(md) {
+//   .content-collapsed .section-trending {
+//     .card-wrapper {
+//       display: flex;
+//       flex-wrap: wrap;
+//       justify-content: space-between;
+//     }
+
+//     .card-list {
+//       padding: 0 0 25px;
+//       width: 49%;
+//     }
+
+//     .media-holder {
+//       height: 190px;
+//     }
+
+//     .text-holder {
+//       margin: 16px 0 0;
+//     }
+
+//     .ads-holder {
+//       width: 165px;
+//       height: 417px;
+//     }
+//   }
+
+//   .section-trending {
+//     .t-section-title {
+//       padding: 17px 0 8px 15px;
+//     }
+
+//     .content-wrapper {
+//       padding: 28px 0;
+//     }
+
+//     .card-wrapper {
+//       padding: 0 15px;
+//     }
+
+//     .card-list {
+//       padding: 25px 0 23px;
+//     }
+
+//     .card-link {
+//       flex-direction: column;
+//       align-items: flex-start;
+//     }
+
+//     .media-holder {
+//       height: 250px;
+//     }
+
+//     .text-holder {
+//       margin: 23px 0 0;
+//     }
+
+//     .ads-holder {
+//       width: 146px;
+//       height: 410px;
+//     }
+//   }
+// }
+
+// @include respond-to(md-down) {
+//   .section-trending {
+//     .media-wrapper {
+//       width: 100%;
+//     }
+
+//     .media-holder {
+//       position: relative;
+
+//       width: 100%;
+
+//       .img {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+    
+//         object-fit: cover;
+//       }
+//     }
+//   }
+// }
+
+// @include respond-to(sm) {
+//   .section-trending .media-holder {
+//     height: 288px;
+//   }
+// }
+
+// @include respond-to(sm-down) {
+//   .section-trending {
+//     .t-section-title {
+//       padding: 17px 0 8px 16px;
+//     }
+
+//     .content-wrapper {
+//       padding: 28px 0;
+//     }
+
+//     .card-wrapper {
+//       padding: 0;
+//     }
+
+//     .card-link {
+//       flex-direction: column;
+//     }
+
+//     .card-list {
+//       padding: 33px 20px 16px;
+//     }
+
+//     .media-wrapper,
+//     .media-holder {
+//       width: 100%;
+//     }
+
+//     .text-holder {
+//       margin: 23px 0 0;
+//     }
+
+//     .title {
+//       font-size: 16px;
+//     }
+
+//     .desc {
+//       line-height: 19px;
+//     }
+
+//     .ads-wrapper {
+//       display: none;
+//     }
+//   }
+// }
+
+// @include respond-to(xs) {
+//   .section-trending {
+//     .t-section-title {
+//       padding: 17px 0 8px 20px;
+//     }
+
+//     .media-holder {
+//       height: 194px;
+//     }
+//   }
+// }

@@ -1,0 +1,227 @@
+.stat-wrapper {
+  .stat-header-holder,
+  .stat-body-holder,
+  .stat-score-holder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .stat-header-holder {
+    padding: 12px 18px;
+  }
+
+  .stat-body-holder {
+    padding: 12px 18px;
+
+    &:nth-of-type(even) {
+      background-color: $light-periwinkle;
+    }
+
+    .stat-score {
+      border-left: 1px solid $black-magic;
+      border-right: 1px solid $black-magic;
+    }
+  }
+
+  .stat-score-holder {
+    justify-content: center;
+  }
+
+  .stat-rank {
+    width: 11%;
+
+    color: $green;
+
+    .fa-caret-up {
+      padding-left: 2px;
+      vertical-align: middle;
+    }
+  }
+
+  .rank-down {
+    .t-rank {
+      color: $bright-red;
+    }
+
+    .fa-caret-up {
+      padding-right: 2px;
+      vertical-align: baseline;
+
+      transform: rotate(180deg);
+    }
+  }
+
+  .rank-up {
+    .t-rank {
+      color: $green;
+    }
+  }
+
+  .stat-name {
+    width: 35%;
+  }
+
+  .stat-score {
+    width: 43%;
+  }
+  
+  .stat-bets {
+    width: 11%;
+
+    text-align: center;
+  }
+
+  .t-head {
+    font-size: 15px;
+    color: $black-pearl;
+    text-transform: uppercase;
+  }
+
+  .t-score {
+    width: 28%;
+
+    text-align: center;
+  }
+
+  .t-rank,
+  .t-name {
+    font-weight: 600;
+  }
+
+  .t-name {
+    padding-left: 10px;
+    margin-bottom: 0;
+  }
+
+  .t-rank {
+    font-size: 14px;
+  }
+
+  .t-bets {
+    font-size: 17px;
+    color: $periwinkle;
+  }
+
+  .t-md-down {
+    display: none;
+  }
+
+  .fa-caret-down {
+    font-size: 18px;
+  }
+
+  .game-bet-holder {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    width: 85%;
+
+    font-size: 18px;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    &.up {
+      border-bottom-color: $green;
+    }
+
+    &.down {
+      border-bottom-color: $bright-red;
+    }
+  }
+}
+
+@include respond-to(md-down) {
+  .stat-wrapper {
+    .stat-name {
+      text-align: center;
+    }
+
+    .team {
+      justify-content: center;
+    }
+
+    .t-lg-up {
+      display: none;
+    }
+
+    .t-md-down {
+      display: block;
+    }
+  }
+}
+
+@include respond-to(md) {
+  .stat-wrapper {
+    .team {
+      .logo-holder {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .img {
+      width: 18px;
+    }
+  }
+}
+
+@include respond-to(xs) {
+  .stat-wrapper {
+    .stat-header-holder,
+    .stat-body-holder {
+      padding-left: 11px;
+      padding-right: 11px;
+    }
+
+    .stat-rank {
+      width: 14%;
+    }
+
+    .stat-name {
+      width: 28%;
+    }
+
+    .team {
+      .logo-holder {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .img {
+      width: 14px;
+    }
+
+    .t-paragraph {
+      font-size: 11px;
+    }
+
+    .t-head {
+      font-size: 10px;
+    }
+
+    .t-name {
+      padding-left: 4px;
+
+      font-size: 12px;
+    }
+
+    .fa-caret-down {
+      font-size: 12px;
+    }
+
+    .game-bet-holder {
+      padding-top: 5px;
+      padding-bottom: 3px;
+      width: 90%;
+
+      font-size: 12px;
+    }
+  }
+}

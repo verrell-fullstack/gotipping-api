@@ -20,6 +20,8 @@ a {
   -webkit-transition: all 0.2s ease-in-out;
 
   @include on-event {
+    text-decoration: none;
+    
     outline: 0;
     box-shadow: none;
   }
@@ -55,6 +57,12 @@ textarea {
   }
 }
 
+body {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -62,4 +70,130 @@ textarea {
   margin-left: auto;
   width: 100%;
   max-width: 1305px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;;
+  align-items: center;
+  margin-bottom: 0;
+  
+  list-style: none;
+}
+
+main {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 72px;
+  margin-left: auto;
+}
+
+.close-holder {
+  position: relative;
+
+  height: 21px;
+}
+
+.backdrop {
+  position: relative;
+
+  height: 100vh;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 17;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(0,0,0,.7);
+
+    transition: all .3s ease-in;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user-logged-content {
+  display: none;
+
+  &.user-logged {
+    display: block;
+  }
+}
+
+@include respond-to(xl) {
+  main {
+    width: calc(100vw - 374px);
+
+    &.content-collapsed {
+      width: calc(100vw - 90px);
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  main {
+    padding-left: 0;
+
+    &.content-collapsed {
+      width: calc(100vw - 70px);
+    }
+  }
+}
+
+@include respond-to(lg-down) {
+  main {
+    // padding-left: 0;
+  }
+}
+
+@include respond-to(lg) {
+  main {
+    margin-top: 72px;
+    width: calc(100vw - 300px);
+
+    &.content-collapsed {
+      width: calc(100vw - 71px);
+    }
+  }
+}
+
+@include respond-to(md) {
+  main {
+    margin-top: 49px;
+    width: calc(100vw - 280px);
+    
+    &.content-collapsed {
+      width: calc(100vw - 55px);
+    }
+  }
+}
+
+@include respond-to(sm-down) {
+  main {
+    margin-top: 49px;
+  }
+
+  .backdrop {
+    &:before {
+      z-index: 10;
+    }
+  }
 }

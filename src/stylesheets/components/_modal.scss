@@ -1,0 +1,220 @@
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+
+  display: none;
+  overflow: hidden;
+
+  outline: 0;
+
+  &.modal-show {
+    display: block;
+    overflow-y: auto;
+  }
+
+  .modal-content {
+    position: relative;
+
+    margin: 65px auto;
+    width: auto;
+    max-width: 528px;
+
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  }
+
+  .header-holder {
+    padding: 32px 31px 0;
+  }
+
+  .content-holder {
+    padding: 21px 48px 33px;
+  }
+
+  .close-holder {
+    &.success-message-show {
+      display: none;
+    }
+  }
+
+  .btn-close {
+    right: 0;
+    left: auto;
+  }
+
+  .password-remember {
+    margin-top: 25px;
+  }
+
+  .other-opt {
+    padding-top: 27px;
+    margin-top: 30px;
+    margin-bottom: 33px;
+
+    border-top: 1px solid  $white-smoke;
+
+    & > a {
+      padding-right: 0;
+      padding-left: 0;
+      width: 48%;
+    }
+  }
+
+  .question-holder {
+    align-items: center;
+    // margin-top: 62px;
+  }
+
+  .t-question {
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .header-message {
+    display: none;
+
+    &.success-message {
+      display: block;
+    }
+  }
+
+  .form-content-holder {
+    &.form-content-hide {
+      display: none;
+    }
+  }
+
+  .message-holder {
+    .content-holder {
+      padding-top: 57px;
+    }
+
+    .action-holder {
+      display: flex;
+      justify-content: center;
+      
+      margin-top: 36px;
+    }
+
+    .form-button {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      width: 247px;
+    }
+  }
+
+  .message-holder,
+  .t-message-title {
+    display: none;  
+
+    &.successful-message {
+      display: block;
+    }
+  }
+
+  .t-message-title {
+    margin-left: 40px;
+
+    font-size: 24px;
+    letter-spacing: .1px;
+  }
+}
+
+.modal-login {
+  .form-wrapper {
+    margin-top: 31px;
+
+    .action-holder {
+      margin-top: 33px;
+    }
+  }
+
+  .form-button {
+    padding: 19px 0 17px;
+  }
+}
+
+.modal-register {
+  .form-wrapper {
+    margin-top: 31px;
+
+    .form-holder {
+      margin-bottom: 15px;
+    }
+  }
+
+  .message-holder {
+    .t-message {
+      margin: 0 auto;
+      width: 56%;
+    }
+  }
+}
+
+.modal-forgot-password {
+  .content-holder {
+    padding-top: 62px;
+    padding-bottom: 70px;
+  }
+
+  .t-note {
+    padding-top: 16px;
+
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  .form-wrapper {
+    margin-top: 22px;
+  }
+
+  .btn-blue {
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+
+  .t-message {
+    font-size: 19px;
+  }
+}
+
+@include respond-to(sm-down) {
+  .modal-wrapper {
+    background-color: $white;
+
+    &.modal-show {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .modal-content {
+      margin: 0;
+      max-width: 100%;
+      height: 100%;
+      overflow-y: auto;
+
+      background-color: transparent;
+      border: 0;
+    }
+
+    .header-holder,
+    .content-holder {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .other-opt {
+      & > a {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    .t-question {
+      font-size: 16px;
+    }
+  }
+}

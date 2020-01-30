@@ -1,22 +1,60 @@
 body {
-  color: $text-color;
+  color: $royal-blue;
   font: 200 20px $font-gotham;
 }
 
 // Headings
 
 .t {
+  margin-bottom: 0;
+
   font-family: $font-gotham;
   font-weight: 600;
   letter-spacing: 1px;
 }
 
+.t-modal-title {
+  @extend .t;
+
+  font-size: 25px;
+  // letter-spacing: 1.8px;
+}
+
+.t-dashboard-title {
+  @extend .t;
+
+  font-size: 19px;
+  letter-spacing: .8px;
+}
+
+.t-section-title {
+  @extend .t;
+
+  font-size: 16.7px;
+}
+
+.t-panel-header {
+  @extend .t;
+
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0;
+}
+
+.t-center {
+  text-align: center;
+}
+
 .t-h1 {
   @extend .t;
+
+  font-size: 40px;
 }
 
 .t-h2 {
   @extend .t;
+
+  font-size: 33px;
 }
 
 .t-h3 {
@@ -24,6 +62,10 @@ body {
 }
 
 .t-h4 {
+  @extend .t;
+}
+
+.t-h5 {
   @extend .t;
 }
 
@@ -50,8 +92,16 @@ body {
   color: $blue;
 }
 
+.c-red {
+  color: $bright-red;
+}
+
 .c-royal-blue {
   color: $royal-blue;
+}
+
+.c-cadet-blue {
+  color: $cadet-blue;
 }
 
 .c-savoy-blue {
@@ -62,10 +112,18 @@ body {
   color: $periwinkle;
 }
 
+.c-perano {
+  color: $perano;
+}
+
 .bg-royal-blue {
   background-color: $royal-blue;
 }
 
 .bg-savoy-blue {
   background-color: $savoy-blue;
+}
+
+.bg-bluish-white {
+  background-color: $bluish-white;
 }

@@ -3,3 +3,16 @@
   height: 100px;
   border: 1px red solid;
 }
+
+//for temporary
+.dashboard {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+@include respond-to(sm-down) {
+  //for temporary
+  .dashboard {
+    padding-left: 0;
+  }
+}

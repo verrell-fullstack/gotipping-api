@@ -6,6 +6,15 @@
   'utils/functions',
   'utils/mixins';
 
+// 2. Vendors
+@import
+  'vendors/normalize',
+  'vendors/bootstrap',
+  'vendors/font-awesome',
+  'vendors/font-awesome-solid',
+  'vendors/font-awesome-regular',
+  'vendors/font-awesome-brands';
+
 // Base stuff
 @import
   'base/base',
@@ -15,13 +24,31 @@
 // Layout-related sections
 @import
   'layout/header',
-  'layout/footer';
+  'layout/footer',
+  'layout/section-trending',
+  'layout/section-recommended',
+  'layout/sidebar',
+  'layout/ads',
+  'layout/section-featured',
+  'layout/subheader-pills',
+  'layout/card-list',
+  'layout/tipping-accordion',
+  'layout/panel-tab',
+  'layout/ingame';
 
 // Components
 @import
-  'components/buttons';
+  'components/buttons',
+  'components/burger-menu',
+  'components/modal',
+  'components/form',
+  'components/video',
+  'components/icons';
 
 // Page-specific styles
 @import
   'pages/home',
-  'pages/about';
+  'pages/about',
+  'pages/tipping-competition',
+  'pages/all-tab',
+  'pages/stat-panel';

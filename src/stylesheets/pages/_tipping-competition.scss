@@ -1,0 +1,33 @@
+.tipping-competition {
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+  .tipping-competition {
+    .card-list {
+      .btn-card {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@include respond-to(lg) {
+  .tipping-competition {
+    .card-list {
+      .btn-card {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@include respond-to(md) {
+  .tipping-competition {
+    .card-list {
+      .btn-card {
+        font-size: 12px;
+      }
+    }
+  }
+}

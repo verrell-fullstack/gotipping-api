@@ -1,0 +1,63 @@
+.ads-wrapper {
+  position: relative;
+
+  width: 1685px;
+  height: 600px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    z-index: 1;
+
+    width: 68px;
+    height: 30px;
+
+    background-image: url(../assets/images/google-ads.png);
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.ads-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .ads-wrapper {
+    // margin: 31px 0 0;
+
+    width: 100%;
+    height: 155px;
+  }
+}
+
+@include respond-to(lg) {
+  .ads-wrapper {
+    height: 140px;
+  }
+}
+
+@include respond-to(lg-down) {
+  .ads-wrapper {
+    // margin: 25px 0 0;
+
+    width: 100%;
+  }
+}
+
+@include respond-to(md-down) {
+  .ads-wrapper {
+    height: 110px;
+  }
+}

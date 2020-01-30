@@ -1,0 +1,159 @@
+
+.section-recommended {
+  // .t-section-title {
+  //   padding: 17px 0 8px 31px;
+  // }
+
+  // .content-wrapper {
+  //   display: flex;
+  //   padding: 31px 10px 33px 31px;
+  // }
+}
+
+// @media screen and (min-width: 1200px) and (max-width: 1440px) {
+//   .section-recommended {
+//     .content-wrapper {
+//       flex-wrap: wrap;
+//       padding: 31px 20px 33px;
+//     }
+
+//     .card-wrapper {
+//       margin-right: 0;
+//     }
+
+//     .card-list {
+//       width: 32.5%;
+
+//       &:not(:nth-child(3n)) {
+//         margin-right: 10px;
+//       }
+//     }
+
+//     .holder-button {
+//       margin-top: 5px;
+//     }
+//   }
+// }
+
+// @include respond-to(lg) {
+//   .content-collapsed {
+//     .section-recommended {
+//       .card-list {
+//         width: 32.5%;
+        
+//         &:nth-child(-n+3) {
+//           margin-top: 0;
+//         }
+
+//         &:nth-child(odd),
+//         &:not(:nth-child(3n)) {
+//           margin-right: 0;
+//         }
+
+//         &:nth-child(3n+2) {
+//           margin: 10px;
+//         }
+
+//         &:nth-child(2) {
+//           margin-top: 0;
+//         }
+//       }
+//     }
+//   }
+
+//   .section-recommended {
+//     .card-list {
+//       width: 48%;
+
+//       &:not(:nth-child(-n+2)) {
+//         margin-top: 10px;
+//       }
+      
+//       &:not(:nth-child(3n)) {
+//         margin-right: 0;
+//       }
+
+//       &:nth-child(odd) {
+//         margin-right: 25px;
+//       }
+
+//     }
+//   }
+// }
+
+// @include respond-to(lg-down) {
+//   .section-recommended {
+//     .t-section-title {
+//       padding: 17px 0 8px 15px;
+//     }
+
+//     .content-wrapper {
+//       padding: 31px 15px 33px;
+//       flex-wrap: wrap;
+//     }
+
+//     .card-wrapper {
+//       margin-right: 0;
+//     }
+
+//     .holder-button {
+//       margin-top: 10px;
+//     }
+//   }
+// }
+
+// @include respond-to(md-down) {
+//   .content-collapsed {
+//     .section-recommended {
+//       .card-list {
+//         width: 49%;
+
+//         &:nth-child(odd) {
+//           margin-right: 13px;
+//         }
+//       }
+//     }
+//   }
+
+//   .section-recommended {
+//     .card-list {
+//       width: 100%;
+
+//       &:not(:nth-child(-n+2)) {
+//         margin-top: 5px;
+//       }
+
+//       &:not(:nth-child(3n)) {
+//         margin-right: 0;
+//       }
+//     } 
+
+//     .holder-button .btn-blue {
+//       font-size: 13px;
+//     }
+//   }
+// }
+
+// @include respond-to(sm) {
+//   .section-recommended {
+//     .media-holder {
+//       height: 288px;
+//     }
+//   }
+// }
+
+// @include respond-to(sm-down) {
+//   .section-recommended {
+//     .text-holder {
+//       margin: 15px 0;
+//     }
+
+//     .title {
+//       font-size: 16px;
+//     }
+
+//     .desc {
+//       line-height: 22px;
+//     }
+//   }
+// }
