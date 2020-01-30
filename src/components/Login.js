@@ -49,7 +49,7 @@ function Login({loginOpen, closeModal, openForgotPassword, openRegister, openUse
       localStorage.setItem('User_ID', res.data.Data.Id)
       // props.history.push('/all-tab')
       openUserLogged()
-      history.push("/admin")
+      history.push("/dashboard")
     })
     // .catch(function(error) {
     //   console.log(error.response.data.Error.Message);

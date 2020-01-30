@@ -190,7 +190,7 @@ function App() {
               <Route component={NoRouteMatch} />
             </Switch>
           ) : (
-            <Redirect path='/' />
+            <Redirect to='/' />
           )
         }
 
