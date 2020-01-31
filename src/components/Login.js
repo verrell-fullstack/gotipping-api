@@ -2,20 +2,27 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import classnames from 'classnames'
 import useForm from 'react-hook-form'
+import useReactRouter from 'use-react-router';
 import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts';
-
-
 import axios from 'axios';
 
 
-function Login({loginOpen, closeModal, openForgotPassword, openRegister, openUserLogged, showPasswordText, showPassword, useHistory}) {
+import { login } from '../utils';
+
+
+function Login({loginOpen, closeModal, openForgotPassword, openRegister, openUserLogged, showPasswordText, showPassword, props}) {
   const { register, handleSubmit, errors } = useForm()
   // const onSubmit = (data) => { openUserLogged() }
 
-  const history = useHistory();
+
+  const { history } = useReactRouter()
+
+  console.log(history)
 
   const [value, setValue] = useState('')
   const [user, setUser] = useState({})
+
+
 
   const handleChangeInput = event => {
     event.persist()
@@ -26,9 +33,6 @@ function Login({loginOpen, closeModal, openForgotPassword, openRegister, openUse
       prevState => ({...prevState, [event.target.name]: event.target.value})
     )
   }
-
-  console.log(history)
-
 
   const handleSubmitForm = event => {
     // e.preventDefault()
@@ -46,18 +50,23 @@ function Login({loginOpen, closeModal, openForgotPassword, openRegister, openUse
       console.log(res.data.Data);
       setUser(res.data.Data)
       ToastsStore.success("Login " + res.data.Status, 1000);
-      localStorage.setItem('User_ID', res.data.Data.Id)
+
+      login(res.data.Data.Id)
+
+      // localStorage.setItem('User_ID', res.data.Data.Id)
       // props.history.push('/all-tab')
+      history.push('/dashboard')
       openUserLogged()
-      history.push("/dashboard")
+      // setLoginSuccess(true)
+      // props.history.push('/dashboard')
     })
     // .catch(function(error) {
-    //   console.log(error.response.data.Error.Message);
-    //   ToastsStore.error(error.response.data.Error.Message);
-    // });
+    //   if(error) {
+    //     console.log(error.response.data.Error.Message);
+    //     ToastsStore.error(error.response.data.Error.Message);
+    //   }
+    // })
   }
-
-  console.log(user)
 
   return(
     <>

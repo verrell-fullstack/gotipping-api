@@ -3,6 +3,10 @@ import { NavLink } from 'react-router-dom'
 import Carousel from 'react-bootstrap/Carousel'
 
 function SubHeaderPills({ subheader, subheaderTabs }) {
+
+
+  console.log(subheader)
+
   return(
     <>
       <div className="subheader-pills subheader-pills-main">

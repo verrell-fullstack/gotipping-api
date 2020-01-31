@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import useReactRouter from 'use-react-router';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 
+import Header from '../components/Header'
 
 import Sidebar from '../components/Sidebar'
 import SubHeaderPills from '../components/SubHeaderPills'
@@ -96,114 +98,160 @@ const subheaderTabs = {
   carouselShow: false,
 }
 
-function dashboard({btnToggle}) {
+function dashboard({props, btnToggle, userID}) {
 
   const [activeTab, setActiveTab] = useState('1');
+  const appRef = useRef(null);
+  const [loginOpen, setLoginOpen] = useState(false)
 
   // const toggle = tab => {
   //   if(activeTab !== tab) setActiveTab(tab);
   // }
 
+  const { history } = useReactRouter()
+
   function toggle(tab) {
     if(activeTab !== tab) setActiveTab(tab);
   }
 
-  console.log(btnToggle)
-
-  return (
-    <main className={classnames("dashboard user-logged-content", {
-      "content-collapsed": !btnToggle,
-      "user-logged": true
-    })}>
-      <Sidebar
-        content={sideBarList}
-        btnToggle={btnToggle}
-        // userLogged={userLogged}
-      />
-
-      {/* <SubHeaderPills 
-        subheader={sideBarList}
-        subheaderTabs={subheaderTabs}
-      /> */}
-
-      <div className="subheader-pills">
-        <div className="subheader-pills-tabs">
-          <Nav tabs className="links-holder">
-            <div className="links-item">
-              <div
-                className={classnames('links-holder-item', { active: activeTab === '1' })}
-                onClick={() => { toggle('1'); }}
-              >
-                All
-              </div>
+  return (    
+    <main className={classnames("dashboard", {
+        "content-collapsed": !btnToggle,
+      })}>
+        <Header
+          reference={appRef}
+          // btnToggle={btnToggle}
+          // setBtnToggle={setBtnToggle}
+          // userLogged={userLogged}
+          // setuserLogged={setuserLogge
+          loginOpen={loginOpen}
+          // useHistory={useHistory}
+          setLoginOpen={setLoginOpen}
+          isDashboard={true}
+        />
+        <Sidebar
+          content={sideBarList}
+          btnToggle={btnToggle}
+          // userLogged={userLogged}
+        />
+  
+        {/* <SubHeaderPills 
+          subheader={sideBarList}
+          subheaderTabs={subheaderTabs}
+        /> */}
+  
+        <div className="subheader-pills subheader-pills-main">
+          <div className="subheader-pills-wrapper">
+            <div className="subheader-pills-holder">
+              {/* <div className="sidebar-item">
+                <div className="icon-holder">
+                  <span className={sideBarList.iconClass}>{sideBarList.icon}</span>
+                </div>
+                <div className="label-holder">
+                  <p className="t-paragraph c-periwinkle label">{sideBarList.label}</p>
+                </div>
+              </div> */}
+            {
+              sideBarList.map((item, i) => {
+                if(item.label === 'Basketball')
+                return(
+                  <div key={i} className="sidebar-item">
+                    <div className="icon-holder">
+                      <span className={item.iconClass}>{item.icon}</span>
+                    </div>
+                    <div className="label-holder">
+                      <p className="t-paragraph c-periwinkle label">{item.label}</p>
+                    </div>
+                  </div>
+                )
+              })
+            }
+          </div>
+            <div className="subheader-pills-search">
+              <input className="form-search" placeholder="Search for competitions.."/>
+              <i className="fas fa-search search-icon"></i>
             </div>
-
-            <div>
-              <div
-                className={classnames('links-holder-item', { active: activeTab === '2' })}
-                onClick={() => { toggle('2'); }}
-              >
-                Tipping Competitions
-              </div>
-            </div>
-
-            <div>
-              <div
-                className={classnames('links-holder-item', { active: activeTab === '3' })}
-                onClick={() => { toggle('3'); }}
-              >
-                News
-              </div>
-            </div>
-
-            <div>
-              <div
-                className={classnames('links-holder-item', { active: activeTab === '4' })}
-                onClick={() => { toggle('4'); }}
-              >
-                Videos
-              </div>
-            </div>
-
-            <div>
-              <div
-                className={classnames('links-holder-item', { active: activeTab === '5' })}
-                onClick={() => { toggle('5'); }}
-              >
-                Statistics
-              </div>
-            </div>
-          </Nav>   
+          </div>
         </div>
-      </div>
-      
-      <TabContent activeTab={activeTab}>
-        <TabPane tabId="1">
-          <AllTab 
-            btnToggle={btnToggle}
-            toggleBtn={toggle}
-          />
-        </TabPane>
-        <TabPane tabId="2">
-          <TippingAccordion 
-            btnToggle={btnToggle}
-          />
-        </TabPane>
-        <TabPane tabId="3">
-          <NewsTab 
-            btnToggle={btnToggle}
-          />
-        </TabPane>
-        <TabPane tabId="4">
-          <VideoTab 
-            btnToggle={btnToggle}
-          />
-        </TabPane>
-        <TabPane tabId="5">
-          
-        </TabPane>
-      </TabContent>
-    </main>
+  
+        <div className="subheader-pills">
+          <div className="subheader-pills-tabs">
+            <Nav tabs className="links-holder">
+              <div className="links-item">
+                <div
+                  className={classnames('links-holder-item', { active: activeTab === '1' })}
+                  onClick={() => { toggle('1'); }}
+                >
+                  All
+                </div>
+              </div>
+  
+              <div>
+                <div
+                  className={classnames('links-holder-item', { active: activeTab === '2' })}
+                  onClick={() => { toggle('2'); }}
+                >
+                  Tipping Competitions
+                </div>
+              </div>
+  
+              <div>
+                <div
+                  className={classnames('links-holder-item', { active: activeTab === '3' })}
+                  onClick={() => { toggle('3'); }}
+                >
+                  News
+                </div>
+              </div>
+  
+              <div>
+                <div
+                  className={classnames('links-holder-item', { active: activeTab === '4' })}
+                  onClick={() => { toggle('4'); }}
+                >
+                  Videos
+                </div>
+              </div>
+  
+              <div>
+                <div
+                  className={classnames('links-holder-item', { active: activeTab === '5' })}
+                  onClick={() => { toggle('5'); }}
+                >
+                  Statistics
+                </div>
+              </div>
+            </Nav>   
+          </div>
+        </div>
+        
+        <TabContent activeTab={activeTab}>
+          <TabPane tabId="1">
+            <AllTab 
+              btnToggle={btnToggle}
+              toggleBtn={toggle}
+            />
+          </TabPane>
+          <TabPane tabId="2">
+            <TippingAccordion 
+              btnToggle={btnToggle}
+            />
+          </TabPane>
+          <TabPane tabId="3">
+            <NewsTab 
+              btnToggle={btnToggle}
+            />
+          </TabPane>
+          <TabPane tabId="4">
+            <VideoTab 
+              btnToggle={btnToggle}
+            />
+          </TabPane>
+          <TabPane tabId="5">
+            
+          </TabPane>
+        </TabContent>
+      </main>
   )
 }
 

@@ -17,7 +17,7 @@ function Sidebar({content, btnToggle}) {
     <>
       <div className={classnames("sidebar-wrapper user-logged-content bg-savoy-blue", {
         "sidebar-collapsed-wrapper" : !btnToggle,
-        "user-logged" : userIdCookies ? true : false,
+        "user-logged" : true,
         // "" : false
       })}>
         <div className="sidebar-list">

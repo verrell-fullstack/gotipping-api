@@ -9,9 +9,8 @@ import {
   Switch,
 } from 'react-router-dom'
 import { hot } from 'react-hot-loader'
-import { useHistory } from "react-router-dom";
 
-import Header from './components/Header'
+// import Header from './components/Header'
 // import Footer from './components/Footer'
 
 import Sidebar from './components/Sidebar'
@@ -36,7 +35,8 @@ import { ReactComponent as Badminton } from '../src/assets/svg/sidebar-badminton
 import { ReactComponent as Esports } from '../src/assets/svg/sidebar-esports.svg'
 import { ReactComponent as MotoSport } from '../src/assets/svg/sidebar-moto-sport.svg'
 
-
+import PrivateRoute from './components/PrivateRoute'
+import PublicRoute from './components/PublicRoute'
 
 import Dashboard from './containers/dashboard';
 
@@ -109,13 +109,15 @@ const sideBarList = [
   },
 ]
 
-const userID = localStorage.getItem('User_ID')
+
 
 function App() {
   const appRef = useRef(null);
   const [btnToggle, setBtnToggle] = useState(false)
   // const [userLogged, setuserLogged] = useState(false)
-  const [loginOpen, setLoginOpen] = useState(false)
+  // const [loginOpen, setLoginOpen] = useState(false)
+
+  const userID = localStorage.getItem('User_ID')
 
   React.useEffect(() => {
     userID ? console.log('userID exist') :  localStorage.removeItem('User_ID')
@@ -124,79 +126,41 @@ function App() {
   return (
     <HashRouter basename="/">
       <div className="App" ref={appRef}>
-        <Header
-          reference={appRef}
-          btnToggle={btnToggle}
-          setBtnToggle={setBtnToggle}
-          // userLogged={userLogged}
-          // setuserLogged={setuserLogge
-          loginOpen={loginOpen}
-          useHistory={useHistory}
-          setLoginOpen={setLoginOpen}
-        />
-        {/* <Sidebar
-          content={sideBarList}
-          btnToggle={btnToggle}
-          // userLogged={userLogged}
-        /> */}
-
-        {
-          userID ? (
-            <Switch>
-              <Route path='/dashboard' exact
-                render={() => <Dashboard btnToggle={btnToggle} />} />
-
-              {/* <Route path='/globals'  component={() => (
-                <Globals
-                  reference={appRef}
-                  btnToggle={btnToggle}
-                />
-              )}/> */}
-              {/* <Route path='/tipping-competitions'  component={() => (
-                <TippingAccordion
-                  btnToggle={btnToggle}
-                  content={sideBarList}
-                  // userLogged={userLogged}
-                />
-              )}/>
-              <Route path='/all-tab'  component={() => (
-                <AllTab
-                  btnToggle={btnToggle}
-                  content={sideBarList}
-                  // userLogged={userLogged}
-                />
-              )}/>
-              <Route path='/news-tab'  component={() => (
-                <NewsTab
-                  btnToggle={btnToggle}
-                  content={sideBarList}
-                  // userLogged={userLogged}
-                />
-              )}/>
-              <Route path='/video-tab'  component={() => (
-                <VideoTab
-                  btnToggle={btnToggle}
-                  content={sideBarList}
-                  // userLogged={userLogged}
-                />
-              )}/>
-              <Route path="/" component={() => (
-                <Home
-                  btnToggle={btnToggle}
-                  content={sideBarList}
-                  // userLogged={userLogged}
-                />
-              )} /> */}
-              <Route component={NoRouteMatch} />
-            </Switch>
-          ) : (
-            <Redirect to='/' />
-          )
-        }
-
+        
+        
+        
         <Switch>
-          <Route path="/about" component={About} />
+
+          {/* <Route path="/" exact render={() => (
+            <Home
+              btnToggle={btnToggle}
+              content={sideBarList}
+              // userLogged={userLogged}
+            />
+          )} /> */}
+          {/* <Route path='/dashboard' exact component={() => <Dashboard btnToggle={btnToggle} userID={userID}/>} />   */}
+
+          {/* render={() => (
+              <Home
+                btnToggle={btnToggle}
+                content={sideBarList}
+                // userLogged={userLogged}
+            />)} */}
+
+          <PrivateRoute component={Dashboard} path="/dashboard" exact />
+          <PublicRoute 
+            restricted={false} 
+            path="/" 
+            exact
+            component={Home}
+           />
+
+          <PublicRoute restricted={false} component={About} path="/about" exact />
+          <Route component={NoRouteMatch} />   
         </Switch>
+
+
+
 
         {/* <Footer /> */}
       </div>
