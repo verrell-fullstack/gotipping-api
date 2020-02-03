@@ -1,10 +1,9 @@
-import React, { useState, useRef } from 'react'
-import useReactRouter from 'use-react-router';
+import React, { useState, useEffect } from 'react'
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import cookie from 'react-cookies'
 
 import Header from '../components/Header'
-
 import Sidebar from '../components/Sidebar'
 import SubHeaderPills from '../components/SubHeaderPills'
 
@@ -24,6 +23,7 @@ import AllTab from './all-tab';
 import NewsTab from './news-tab'
 import TippingAccordion from './tipping-competitions'
 import VideoTab from './video-tab'
+import axios from 'axios';
 
 const sideBarList = [
   {
@@ -103,13 +103,27 @@ function dashboard({props, userID, reference}) {
   const [activeTab, setActiveTab] = useState('1');
   const [loginOpen, setLoginOpen] = useState(false)
   const [btnToggle, setBtnToggle] = useState(false)
+  const [user, setUser] = useState({})
 
   // const toggle = tab => {
   //   if(activeTab !== tab) setActiveTab(tab);
   // }
 
+  const current = cookie.load('jwt')
 
-  const { history } = useReactRouter()
+  console.log(current)
+
+  useEffect(() => {
+    if (current) {
+      axios.get(`https://gotipping.dev/v1/organizations/t4BSVOgNGA3fyRnNftCy/users/${current}`)
+      .then(res => {
+        setUser(res.data.Data)
+      })
+    }
+  }, [])
+
+  console.log(user)
+
 
   function toggle(tab) {
     if(activeTab !== tab) setActiveTab(tab);
@@ -129,6 +143,7 @@ function dashboard({props, userID, reference}) {
           // useHistory={useHistory}
           setLoginOpen={setLoginOpen}
           isDashboard={true}
+          user={user}
         />
         <Sidebar
           content={sideBarList}

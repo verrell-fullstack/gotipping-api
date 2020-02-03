@@ -9,7 +9,7 @@ import ForgotPassword from '../components/ForgotPassword'
 
 import { logout } from '../utils';
 
-function Header({btnToggle, setBtnToggle, reference, userLogged, setuserLogged, loginOpen, setLoginOpen, useHistory, isDashboard}) {
+function Header({btnToggle, setBtnToggle, reference, userLogged, setuserLogged, loginOpen, setLoginOpen, useHistory, isDashboard, user}) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [registerOpen, setRegisterOpen] = useState(false)
@@ -17,6 +17,8 @@ function Header({btnToggle, setBtnToggle, reference, userLogged, setuserLogged, 
   const [forgotpasswordMessage, setforgotpasswordMessage] = useState(false)
   const [signUpMessage, setSignUpMessage] = useState(false)
   const [showPasswordText, setShowPassword] = useState(false)
+
+  console.log(user)
 
   const openMenu = () => {
     setMenuOpen(!menuOpen)
@@ -139,26 +141,30 @@ function Header({btnToggle, setBtnToggle, reference, userLogged, setuserLogged, 
               </ul>
             </div>
           </div>
-          <div className="logged-holder">
-            <p className="t-paragraph c-white t-message-name">Welcome Back,<span>Ryan</span>!</p>
-            <div className={classnames("dropdown-holder", {
-              "dropdown-open": dropdownOpen
-            })}>
-              <button className="btn btn-user-img" onClick={openDropdown}>
-                <img src={require('../assets/images/user.png')} className="user-img" alt="User"/>
-                <span className="fas fa-caret-down icon-arrow c-blue"></span>
-              </button>
-              <ul className={classnames("dropdown-menu", {
-                "dropdown-menu-open": dropdownOpen
-              })}>
-                <li><Link to="/" className="t-paragraph c-black">Profile Settings</Link></li>
-                <li><Link to="/" className="t-paragraph c-cadet-blue">Account Settings</Link></li>
-                <li><Link to="/" className="t-paragraph c-cadet-blue">Notifications</Link></li>
-                <li><Link to="/" className="t-paragraph c-cadet-blue">Help</Link></li>
-                <li><Link to="/" className="t-paragraph c-red" onClick={userLogout}>Sign Out</Link></li>
-              </ul>
-            </div>
-          </div>
+          {
+            user ? (
+              <div className="logged-holder">
+                <p className="t-paragraph c-white t-message-name">Welcome Back, <span>{user.FirstName}</span>!</p>
+                <div className={classnames("dropdown-holder", {
+                  "dropdown-open": dropdownOpen
+                })}>
+                  <button className="btn btn-user-img" onClick={openDropdown}>
+                    <img src={require('../assets/images/user.png')} className="user-img" alt="User"/>
+                    <span className="fas fa-caret-down icon-arrow c-blue"></span>
+                  </button>
+                  <ul className={classnames("dropdown-menu", {
+                    "dropdown-menu-open": dropdownOpen
+                  })}>
+                    <li><Link to="/" className="t-paragraph c-black">Profile Settings</Link></li>
+                    <li><Link to="/" className="t-paragraph c-cadet-blue">Account Settings</Link></li>
+                    <li><Link to="/" className="t-paragraph c-cadet-blue">Notifications</Link></li>
+                    <li><Link to="/" className="t-paragraph c-cadet-blue">Help</Link></li>
+                    <li><Link to="/" className="t-paragraph c-red" onClick={userLogout}>Sign Out</Link></li>
+                  </ul>
+                </div>
+              </div>
+            ) : ('')
+          }
         </div>
       </div>
     </header>

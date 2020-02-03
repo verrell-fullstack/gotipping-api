@@ -5,9 +5,10 @@ import useForm from 'react-hook-form'
 import useReactRouter from 'use-react-router';
 import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts';
 import axios from 'axios';
-
-
 import { login } from '../utils';
+
+
+
 
 
 function Login({loginOpen, closeModal, openForgotPassword, openRegister, openUserLogged, showPasswordText, showPassword, props}) {
@@ -26,8 +27,8 @@ function Login({loginOpen, closeModal, openForgotPassword, openRegister, openUse
 
   const handleChangeInput = event => {
     event.persist()
-    console.log(event.target.name)
-    console.log(event.target.value)
+    // console.log(event.target.name)
+    // console.log(event.target.value)
 
     setValue(
       prevState => ({...prevState, [event.target.name]: event.target.value})

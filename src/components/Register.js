@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import classnames from 'classnames'
 import useForm from 'react-hook-form'
 import axios from 'axios';
+import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts';
 
 function Register({registerOpen, signUpMessage, closeModal, openLogin, openRegisterMessage, showPassword, showPasswordText}) {
   const { register, handleSubmit, errors } = useForm()
@@ -35,10 +36,12 @@ function Register({registerOpen, signUpMessage, closeModal, openLogin, openRegis
     axios.post(`https://gotipping.dev/v1/organizations/t4BSVOgNGA3fyRnNftCy/users/register`, user)
     .then(res => {
       console.log(res.data);
+      ToastsStore.success(res.data.Status);
     })
     .catch(function(error) {
       // console.log(error)
-      console.log(error.response.data.Error.Message);
+      console.log(error.response.data);
+      ToastsStore.error(error.response.data.Error.Message);
     });
   }
 
@@ -47,6 +50,10 @@ function Register({registerOpen, signUpMessage, closeModal, openLogin, openRegis
       <div className={classnames("modal-wrapper modal-register", {
         "modal-show" : registerOpen
       })}>
+        <ToastsContainer 
+          position={ToastsContainerPosition.TOP_CENTER} 
+          store={ToastsStore}
+        />
         <div className="modal-content">
           <div className="header-holder">
             <div className={classnames("close-holder", {

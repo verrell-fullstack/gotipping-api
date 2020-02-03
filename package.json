@@ -13,6 +13,7 @@
     "react-axios": "^2.0.3",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-collapsible": "^2.6.2",
+    "react-cookies": "^0.1.1",
     "react-dom": "^16.8.6",
     "react-hook-form": "^3.28.11",
     "react-id-swiper": "^2.4.0",
