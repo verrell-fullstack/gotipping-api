@@ -48,7 +48,7 @@ function Header({btnToggle, setBtnToggle, reference, userLogged, setuserLogged, 
     setRegisterOpen(false)
     setForgotPasswordOpen(false)
     setMenuOpen(false)
-    // reference.current.classList.add('backdrop')
+    reference.current.classList.add('backdrop')
   }
 
   const closeModal = () => {
@@ -56,20 +56,20 @@ function Header({btnToggle, setBtnToggle, reference, userLogged, setuserLogged, 
     setRegisterOpen(false)
     setForgotPasswordOpen(false)
     setSignUpMessage(false)
-    // reference.current.classList.remove('backdrop')
-    // reference.current.classList.remove('no-scroll');
+    reference.current.classList.remove('backdrop')
+    reference.current.classList.remove('no-scroll');
   }
 
   const openRegister = () => {
     setRegisterOpen(!registerOpen)
     setLoginOpen(false)
-    // reference.current.classList.add('backdrop')
+    reference.current.classList.add('backdrop')
   }
 
   const openForgotPassword = () => {
     setForgotPasswordOpen(!forgotPasswordOpen)
     setLoginOpen(false)
-    // reference.current.classList.add('backdrop')
+    reference.current.classList.add('backdrop')
   }
 
   const openForgotMessage = () => {
@@ -83,8 +83,8 @@ function Header({btnToggle, setBtnToggle, reference, userLogged, setuserLogged, 
   const openUserLogged = () => {
     // setuserLogged(!userLogged)
     openLogin(false)
-    // reference.current.classList.remove('backdrop')
-    // reference.current.classList.remove('no-scroll');
+    reference.current.classList.remove('backdrop')
+    reference.current.classList.remove('no-scroll');
   }
 
   const userLogout = () => {

@@ -98,15 +98,16 @@ const subheaderTabs = {
   carouselShow: false,
 }
 
-function dashboard({props, btnToggle, userID}) {
+function dashboard({props, userID, reference}) {
 
   const [activeTab, setActiveTab] = useState('1');
-  const appRef = useRef(null);
   const [loginOpen, setLoginOpen] = useState(false)
+  const [btnToggle, setBtnToggle] = useState(false)
 
   // const toggle = tab => {
   //   if(activeTab !== tab) setActiveTab(tab);
   // }
+
 
   const { history } = useReactRouter()
 
@@ -119,9 +120,9 @@ function dashboard({props, btnToggle, userID}) {
         "content-collapsed": !btnToggle,
       })}>
         <Header
-          reference={appRef}
-          // btnToggle={btnToggle}
-          // setBtnToggle={setBtnToggle}
+          reference={reference}
+          btnToggle={btnToggle}
+          setBtnToggle={setBtnToggle}
           // userLogged={userLogged}
           // setuserLogged={setuserLogge
           loginOpen={loginOpen}

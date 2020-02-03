@@ -147,12 +147,13 @@ function App() {
                 // userLogged={userLogged}
             />)} */}
 
-          <PrivateRoute component={Dashboard} path="/dashboard" exact />
+          <PrivateRoute component={Dashboard} path="/dashboard" exact reference={appRef} />
           <PublicRoute 
             restricted={false} 
             path="/" 
             exact
             component={Home}
+            reference={appRef}
            />
 
           <PublicRoute restricted={false} component={About} path="/about" exact />

@@ -9,15 +9,14 @@ const subheaderTabs = {
   carouselShow: false,
 }
 
-function Home({btnToggle, content, userLogged}) {
+function Home({btnToggle, content, userLogged, reference}) {
 
-  const appRef = useRef(null);
   const [loginOpen, setLoginOpen] = useState(false)
 
   return(
     <>
       <Header
-        reference={appRef}
+        reference={reference}
         // btnToggle={btnToggle}
         // setBtnToggle={setBtnToggle}
         // userLogged={userLogged}
