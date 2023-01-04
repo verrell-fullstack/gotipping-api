@@ -21,7 +21,7 @@
     "react-responsive-accordion": "^1.0.0",
     "react-responsive-modal": "^4.0.1",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8",
+    "react-scripts": "5.0.1",
     "react-toasts": "^3.0.6",
     "reactstrap": "^8.4.0",
     "semantic-ui-react": "^0.88.2",
